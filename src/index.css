@@ -11,17 +11,28 @@
     --color-sand: #A69D92;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
     font-family: 'Noto Sans Arabic', 'Manrope', system-ui, -apple-system, sans-serif;
     background-color: var(--color-charcoal);
     color: var(--color-ivory);
     overflow-x: hidden;
+    touch-action: manipulation;
   }
 
   /* When English is active */
   [dir="ltr"] body {
     font-family: 'Manrope', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
   }
+}
+
+/* Safe area padding for mobile bottom bars */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 8px);
 }
 
 /* Custom Typography Helpers */
@@ -56,10 +67,10 @@
   border-color: rgba(243, 238, 230, 0.15);
 }
 
-/* Smooth transitions */
-* {
+/* Interactive elements crisp transitions without wildcard overhead */
+button, a, input, select, textarea {
   transition-property: color, background-color, border-color, transform, opacity, box-shadow;
-  transition-duration: 200ms;
+  transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 

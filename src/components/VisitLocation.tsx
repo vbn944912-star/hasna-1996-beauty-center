@@ -1,7 +1,8 @@
 import React from 'react';
 import { TRANSLATIONS, Language } from '../data/translations';
 import { BUSINESS_INFO, getWhatsAppLink } from '../data/content';
-import { MapPin, Phone, MessageSquare, Clock, Instagram, Navigation, ExternalLink } from 'lucide-react';
+import { useToast } from './Toast';
+import { MapPin, Phone, MessageSquare, Clock, Instagram, Navigation, ExternalLink, Copy } from 'lucide-react';
 
 interface VisitLocationProps {
   lang: Language;
@@ -10,6 +11,17 @@ interface VisitLocationProps {
 export const VisitLocation: React.FC<VisitLocationProps> = ({ lang }) => {
   const t = TRANSLATIONS[lang];
   const isAr = lang === 'ar';
+  const { showToast } = useToast();
+
+  const handleCopyPhone = () => {
+    navigator.clipboard?.writeText(BUSINESS_INFO.phoneDisplay);
+    showToast(t.toast.phoneCopied);
+  };
+
+  const handleCopyAddress = () => {
+    navigator.clipboard?.writeText(BUSINESS_INFO.addressAr);
+    showToast(t.toast.addressCopied);
+  };
 
   return (
     <section id="location" className="bg-[#171513] text-[#F3EEE6] py-20 sm:py-28 relative overflow-hidden border-t border-[#D8B477]/15">
@@ -19,12 +31,12 @@ export const VisitLocation: React.FC<VisitLocationProps> = ({ lang }) => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 sm:mb-20">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#D8B477] font-semibold block mb-4">
+        <div className="max-w-3xl mb-14 sm:mb-18">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#D8B477] font-semibold block mb-3">
             {t.location.badge}
           </span>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-medium text-[#F3EEE6] leading-[1.18] tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-medium text-[#F3EEE6] leading-[1.18] tracking-tight mb-5">
             {t.location.headingLine1}
             <br />
             <span className="text-[#D8B477] italic font-normal">
@@ -46,9 +58,20 @@ export const VisitLocation: React.FC<VisitLocationProps> = ({ lang }) => {
                   <MapPin size={22} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xs uppercase tracking-widest text-[#D8B477] font-semibold mb-2">
-                    {t.location.addressTitle}
-                  </h3>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-xs uppercase tracking-widest text-[#D8B477] font-semibold">
+                      {t.location.addressTitle}
+                    </h3>
+                    <button
+                      type="button"
+                      onClick={handleCopyAddress}
+                      className="text-[11px] text-[#A69D92] hover:text-[#D8B477] flex items-center gap-1 transition-colors"
+                      title={isAr ? 'نسخ العنوان' : 'Copy address'}
+                    >
+                      <Copy size={12} />
+                      <span>{isAr ? 'نسخ' : 'Copy'}</span>
+                    </button>
+                  </div>
                   <p className="text-base sm:text-lg text-[#F3EEE6] font-medium leading-snug mb-1">
                     7P9V+P84 · {isAr ? 'القطارة · المراغة' : 'Al Qattarah · Al Mragha'}
                   </p>
@@ -56,16 +79,18 @@ export const VisitLocation: React.FC<VisitLocationProps> = ({ lang }) => {
                     {isAr ? 'أبوظبي · دولة الإمارات العربية المتحدة' : 'Abu Dhabi · United Arab Emirates'}
                   </p>
 
-                  <a
-                    href={BUSINESS_INFO.mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 py-3 px-5 bg-[#D8B477] text-[#211D1A] font-semibold text-xs uppercase tracking-wider hover:bg-[#E5C791] active:translate-y-0.5 transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D8B477]"
-                  >
-                    <Navigation size={14} />
-                    <span>{t.location.directionsBtn}</span>
-                    <ExternalLink size={13} className="opacity-70" />
-                  </a>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href={BUSINESS_INFO.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2.5 py-3 px-5 bg-[#D8B477] text-[#211D1A] font-semibold text-xs uppercase tracking-wider hover:bg-[#E5C791] active:translate-y-0.5 transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D8B477]"
+                    >
+                      <Navigation size={14} />
+                      <span>{t.location.directionsBtn}</span>
+                      <ExternalLink size={13} className="opacity-70" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -118,13 +143,24 @@ export const VisitLocation: React.FC<VisitLocationProps> = ({ lang }) => {
 
             {/* Quick Contact Buttons Row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <a
-                href="tel:+971523214984"
-                className="flex items-center justify-center gap-3 py-3.5 px-4 bg-[#211D1A] border border-[#D8B477]/40 text-[#F3EEE6] hover:text-[#D8B477] hover:border-[#D8B477] transition-all text-xs font-semibold uppercase tracking-wider"
-              >
-                <Phone size={16} className="text-[#D8B477]" />
-                <span>{BUSINESS_INFO.phoneDisplay}</span>
-              </a>
+              <div className="flex items-center bg-[#211D1A] border border-[#D8B477]/40 text-[#F3EEE6] transition-all">
+                <a
+                  href={`tel:${BUSINESS_INFO.phoneRaw}`}
+                  className="flex-1 flex items-center justify-center gap-2.5 py-3.5 px-3 hover:text-[#D8B477] text-xs font-semibold uppercase tracking-wider"
+                >
+                  <Phone size={15} className="text-[#D8B477]" />
+                  <span>{BUSINESS_INFO.phoneDisplay}</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={handleCopyPhone}
+                  className="p-3 text-[#A69D92] hover:text-[#D8B477] border-s border-[#D8B477]/20"
+                  title={isAr ? 'نسخ رقم الهاتف' : 'Copy phone number'}
+                  aria-label={isAr ? 'نسخ رقم الهاتف' : 'Copy phone number'}
+                >
+                  <Copy size={14} />
+                </button>
+              </div>
 
               <a
                 href={getWhatsAppLink()}

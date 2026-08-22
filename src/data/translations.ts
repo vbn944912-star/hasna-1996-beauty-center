@@ -120,12 +120,62 @@ export const TRANSLATIONS = {
       tooltip: "تحدثي معنا عبر واتساب",
       ariaLabel: "تواصل مع مركز حسنا 1996 عبر واتساب",
     },
+    quickBar: {
+      call: "اتصال",
+      whatsapp: "واتساب",
+      directions: "الموقع",
+      quickBook: "حجز سريع",
+    },
+    quickFaq: {
+      badge: "معلومات سريعة",
+      headingLine1: "إجابات فورية",
+      headingLine2: "عن زيارتكِ.",
+      description: "كل ما تودين معرفته قبل زيارتكِ لمركز حسنا 1996 لتجربة مريحة وسلسة.",
+      items: [
+        {
+          q: "هل الصالون مخصص للنساء فقط وبخصوصية كاملة؟",
+          a: "نعم تمامًا، المركز مخصص بالكامل للسيدات بطاقم عمل نسائي محترف وبيئة آمنة تضمن أعلى درجات الخصوصية والراحة."
+        },
+        {
+          q: "هل يلزم الحجز المسبق أم يمكنني الحضور مباشرة؟",
+          a: "نرحب بكِ دائمًا! يُفضل الحجز المسبق عبر واتساب لضمان التفرغ التام للخدمة المختارة بدون أي انتظار."
+        },
+        {
+          q: "أين يقع المركز وهل تتوفر مواقف سيارات؟",
+          a: "يقع المركز في القطارة، المراغة بمدينة العين، وتتوفر مساحات مريحة وفسيحة لمواقف السيارات بجوار المركز."
+        },
+        {
+          q: "ما هي ساعات العمل اليومية؟",
+          a: "نستقبلكم يوميًا طوال أيام الأسبوع من الساعة 10:00 صباحًا حتى 10:00 مساءً."
+        }
+      ]
+    },
+    toast: {
+      phoneCopied: "تم نسخ رقم الهاتف بنجاح",
+      addressCopied: "تم نسخ العنوان بنجاح",
+    },
+    filters: {
+      all: "جميع الخدمات",
+      hair: "الشعر والتسريحات",
+      hammam: "الحمام والسبا",
+      skin: "العناية بالبشرة",
+      nails: "الأظافر واليدين",
+      hennaMakeup: "الحناء والمكياج",
+      bridal: "باقات العرائس",
+      searchPlaceholder: "ابحثي عن خدمة (مثل: قص، حمام، حناء، صبغة)...",
+      resultsCount: "خدمة متاحة",
+      noResults: "لم نجد خدمات مطابقة لبحثكِ. يمكنكِ التواصل معنا عبر واتساب لطلب خدمة مخصصة.",
+      clearSearch: "مسح البحث",
+    },
     bookingModal: {
       title: "تنسيق موعد في حسنا 1996",
       subtitle: "اختاري الخدمة والوقت المناسب وسيتم تحويلكِ إلى واتساب لتأكيد الحجز فورًا.",
       selectService: "الخدمة المطلوبة",
       selectDate: "تاريخ الزيارة المفضل",
       selectTime: "الفترة الزمنية المفضلة",
+      todayShortcut: "اليوم",
+      tomorrowShortcut: "غداً",
+      weekendShortcut: "نهاية الأسبوع",
       notes: "ملاحظات إضافية (اختياري)",
       notesPlaceholder: "أي تفاصيل تودين إخبارنا بها قبل الزيارة...",
       submitBtn: "إرسال طلب الحجز عبر واتساب",
@@ -254,12 +304,62 @@ export const TRANSLATIONS = {
       tooltip: "Connect with us on WhatsApp",
       ariaLabel: "Connect with Hasna 1996 Beauty Center on WhatsApp",
     },
+    quickBar: {
+      call: "Call",
+      whatsapp: "WhatsApp",
+      directions: "Directions",
+      quickBook: "Book Visit",
+    },
+    quickFaq: {
+      badge: "Quick Info",
+      headingLine1: "Instant answers",
+      headingLine2: "for your visit.",
+      description: "Everything you need to know before your appointment at Hasna 1996 for a seamless experience.",
+      items: [
+        {
+          q: "Is the center ladies-only with complete privacy?",
+          a: "Yes, our sanctuary is exclusively for ladies with an all-female professional team and total privacy."
+        },
+        {
+          q: "Is advance booking required or are walk-ins welcome?",
+          a: "Walk-ins are always welcomed! Advance booking via WhatsApp is recommended to secure your preferred stylist with zero wait time."
+        },
+        {
+          q: "Where is the center located and is parking available?",
+          a: "We are situated in Al Qattarah / Al Mragha, Al Ain, with ample and convenient parking right in front."
+        },
+        {
+          q: "What are your daily visiting hours?",
+          a: "We are open daily, 7 days a week, from 10:00 AM to 10:00 PM."
+        }
+      ]
+    },
+    toast: {
+      phoneCopied: "Phone number copied to clipboard",
+      addressCopied: "Address copied to clipboard",
+    },
+    filters: {
+      all: "All Services",
+      hair: "Hair & Styling",
+      hammam: "Hammam & Spa",
+      skin: "Skin Care",
+      nails: "Nails & Hands",
+      hennaMakeup: "Henna & Makeup",
+      bridal: "Bridal Suite",
+      searchPlaceholder: "Search services (e.g. hair, hammam, henna)...",
+      resultsCount: "services available",
+      noResults: "No rituals matching your query. Contact us via WhatsApp for customized consultations.",
+      clearSearch: "Clear search",
+    },
     bookingModal: {
       title: "Arrange Your Visit at Hasna 1996",
       subtitle: "Select your preferred ritual and time slot, and we'll instantly connect you to WhatsApp to confirm.",
       selectService: "Desired Service / Ritual",
       selectDate: "Preferred Date",
       selectTime: "Preferred Time Slot",
+      todayShortcut: "Today",
+      tomorrowShortcut: "Tomorrow",
+      weekendShortcut: "Weekend",
       notes: "Additional Notes (Optional)",
       notesPlaceholder: "Any details or questions before your visit...",
       submitBtn: "Send Booking Request via WhatsApp",

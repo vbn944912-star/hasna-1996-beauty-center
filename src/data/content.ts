@@ -18,6 +18,7 @@ export interface ServiceItem {
   number: string;
   nameAr: string;
   nameEn: string;
+  categoryTag: 'hair' | 'hammam' | 'skin' | 'nails' | 'hennaMakeup' | 'bridal';
   categoryAr: string;
   categoryEn: string;
   descAr: string;
@@ -76,6 +77,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     number: "01",
     nameAr: "تصفيف وقص الشعر",
     nameEn: "Hair styling & cuts",
+    categoryTag: "hair",
     categoryAr: "العناية بالشعر",
     categoryEn: "Hair Care",
     descAr: "قصات عصرية واستشارات دقيقة تلائم ملامحكِ وتبرز كثافة وحيوية شعركِ.",
@@ -87,6 +89,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     number: "02",
     nameAr: "صبغات وتسريحات",
     nameEn: "Color & styling",
+    categoryTag: "hair",
     categoryAr: "الشعر والمناسبات",
     categoryEn: "Color & Updos",
     descAr: "تدرجات لونية راقية بأجود المستحضرات العالمية مع تسريحات خاصة للمناسبات.",
@@ -97,6 +100,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     number: "03",
     nameAr: "الحمام المغربي",
     nameEn: "Moroccan hammam",
+    categoryTag: "hammam",
     categoryAr: "طقوس الاسترخاء",
     categoryEn: "Signature Rituals",
     descAr: "طقس أصيل بالصابون المغربي والأعشاب الطبيعية والبخار لاستعادة نضارة بشرتكِ واسترخائكِ.",
@@ -108,6 +112,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     number: "04",
     nameAr: "العناية بالبشرة",
     nameEn: "Skin rituals",
+    categoryTag: "skin",
     categoryAr: "نضارة وإشراق",
     categoryEn: "Facial Care",
     descAr: "جلسات تنظيف وترطيب عميق مصممة خصيصًا لاحتياجات بشرتكِ بمنتجات نقية ومغذية.",
@@ -118,6 +123,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     number: "05",
     nameAr: "مانيكير وباديكير",
     nameEn: "Manicure & pedicure",
+    categoryTag: "nails",
     categoryAr: "الأظافر واليدين",
     categoryEn: "Nail Care",
     descAr: "عناية متكاملة لليدين والقدمين، مع تقشير لطيف وترطيب وألوان طلاء كلاسيكية ومعاصرة.",
@@ -128,6 +134,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     number: "06",
     nameAr: "فن الحناء",
     nameEn: "Henna artistry",
+    categoryTag: "hennaMakeup",
     categoryAr: "الفن التراثي",
     categoryEn: "Traditional Art",
     descAr: "نقوش حناء استثنائية تمزج بين الأصالة الإماراتية والخطوط الهندسية الناعمة.",
@@ -139,6 +146,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     number: "07",
     nameAr: "المكياج",
     nameEn: "Makeup artistry",
+    categoryTag: "hennaMakeup",
     categoryAr: "الإطلالات الفاخرة",
     categoryEn: "Luxury Beauty",
     descAr: "مكياج يبرز جمالكِ الطبيعي بأسلوب راقٍ يدوم طوال مناسبتكِ بتفاصيل متقنة.",
@@ -149,6 +157,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     number: "08",
     nameAr: "تجهيز العرائس",
     nameEn: "Bridal preparation",
+    categoryTag: "bridal",
     categoryAr: "اليوم الكبير",
     categoryEn: "Bridal Suite",
     descAr: "باقة عناية وتجهيز ملكية شاملة للعروس لتتألقي بثقة وهدوء في ليلتكِ الاستثنائية.",
