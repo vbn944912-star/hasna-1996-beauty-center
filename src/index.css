@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-charcoal: #211D1A;
+    --color-ivory: #F3EEE6;
+    --color-gold: #D8B477;
+    --color-gold-hover: #E5C791;
+    --color-espresso: #171513;
+    --color-brown: #4B3527;
+    --color-sand: #A69D92;
+  }
+
+  body {
+    font-family: 'Noto Sans Arabic', 'Manrope', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-charcoal);
+    color: var(--color-ivory);
+    overflow-x: hidden;
+  }
+
+  /* When English is active */
+  [dir="ltr"] body {
+    font-family: 'Manrope', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom Typography Helpers */
+.font-display-ar {
+  font-family: 'Noto Kufi Arabic', 'Noto Sans Arabic', sans-serif;
+}
+
+.font-display-en {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-body-ar {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+.font-body-en {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Subtle background noise texture */
+.bg-noise {
+  background-image: radial-gradient(rgba(216, 180, 119, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Luxury hairline borders */
+.border-gold-hairline {
+  border-color: rgba(216, 180, 119, 0.2);
+}
+
+.border-ivory-hairline {
+  border-color: rgba(243, 238, 230, 0.15);
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, transform, opacity, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
