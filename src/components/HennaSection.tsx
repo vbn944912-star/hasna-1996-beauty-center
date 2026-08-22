@@ -1,6 +1,7 @@
 import React from 'react';
 import { TRANSLATIONS, Language } from '../data/translations';
 import { IMAGES, getServiceWhatsAppLink } from '../data/content';
+import { OptimizedImage } from './OptimizedImage';
 import { LogoMark } from './Logo';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -72,13 +73,12 @@ export const HennaSection: React.FC<HennaSectionProps> = ({ lang }) => {
           {/* Visual Column with Hasna 1996 Luxury Seal */}
           <div className="lg:col-span-6 relative">
             <div className="relative z-10 overflow-hidden shadow-2xl">
-              <img
-                src={IMAGES.henna}
-                alt="Hasna 1996 Intricate Henna Artistry"
-                className="w-full h-[460px] sm:h-[540px] object-cover object-center transform hover:scale-102 transition-transform duration-500"
-                loading="lazy"
+              <OptimizedImage
+                image={IMAGES.henna}
+                className="w-full h-[460px] sm:h-[540px]"
+                imgClassName="transform hover:scale-102 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#211D1A]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#211D1A]/80 via-transparent to-transparent pointer-events-none" />
             </div>
 
             {/* Subtle Geometric Background Frame */}

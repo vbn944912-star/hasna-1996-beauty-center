@@ -1,3 +1,18 @@
+// High-performance direct ES imports for Vite asset pipeline
+import heroWebp from '../assets/images/hero_salon_interior_1787400125313.webp';
+import heroMobileWebp from '../assets/images/hero_salon_interior_1787400125313_mobile.webp';
+import heroJpg from '../assets/images/hero_salon_interior_1787400125313.jpg';
+
+import hammamWebp from '../assets/images/moroccan_hammam_ritual_1787400140444.webp';
+import hammamMobileWebp from '../assets/images/moroccan_hammam_ritual_1787400140444_mobile.webp';
+import hammamJpg from '../assets/images/moroccan_hammam_ritual_1787400140444.jpg';
+
+import hennaWebp from '../assets/images/henna_art_luxury_1787400157639.webp';
+import hennaMobileWebp from '../assets/images/henna_art_luxury_1787400157639_mobile.webp';
+import hennaJpg from '../assets/images/henna_art_luxury_1787400157639.jpg';
+
+import placeholders from '../assets/images/placeholders.json';
+
 export interface ServiceItem {
   id: string;
   number: string;
@@ -32,9 +47,27 @@ export const BUSINESS_INFO = {
 };
 
 export const IMAGES = {
-  hero: "/src/assets/images/hero_salon_interior_1787400125313.jpg",
-  hammam: "/src/assets/images/moroccan_hammam_ritual_1787400140444.jpg",
-  henna: "/src/assets/images/henna_art_luxury_1787400157639.jpg",
+  hero: {
+    src: heroWebp,
+    mobileSrc: heroMobileWebp,
+    fallback: heroJpg,
+    placeholder: placeholders.hero_salon_interior_1787400125313,
+    alt: "Hasna 1996 Boutique Beauty Salon Interior",
+  },
+  hammam: {
+    src: hammamWebp,
+    mobileSrc: hammamMobileWebp,
+    fallback: hammamJpg,
+    placeholder: placeholders.moroccan_hammam_ritual_1787400140444,
+    alt: "Hasna 1996 Moroccan Hammam Sanctuary Ritual",
+  },
+  henna: {
+    src: hennaWebp,
+    mobileSrc: hennaMobileWebp,
+    fallback: hennaJpg,
+    placeholder: placeholders.henna_art_luxury_1787400157639,
+    alt: "Hasna 1996 Intricate Henna Artistry",
+  },
 };
 
 export const SERVICES_LIST: ServiceItem[] = [

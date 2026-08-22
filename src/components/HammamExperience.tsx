@@ -1,6 +1,7 @@
 import React from 'react';
 import { TRANSLATIONS, Language } from '../data/translations';
 import { IMAGES, getServiceWhatsAppLink } from '../data/content';
+import { OptimizedImage } from './OptimizedImage';
 import { Sparkles, Check, ArrowUpRight } from 'lucide-react';
 
 interface HammamExperienceProps {
@@ -27,13 +28,12 @@ export const HammamExperience: React.FC<HammamExperienceProps> = ({ lang }) => {
           {/* Visual Column (Tall Image with Subtle Gold Frame Accent) */}
           <div className="lg:col-span-6 relative order-2 lg:order-1">
             <div className="relative z-10 overflow-hidden shadow-2xl">
-              <img
-                src={IMAGES.hammam}
-                alt="Hasna 1996 Moroccan Hammam Sanctuary"
-                className="w-full h-[460px] sm:h-[560px] object-cover object-center transform hover:scale-102 transition-transform duration-500"
-                loading="lazy"
+              <OptimizedImage
+                image={IMAGES.hammam}
+                className="w-full h-[460px] sm:h-[560px]"
+                imgClassName="transform hover:scale-102 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#171513]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#171513]/80 via-transparent to-transparent pointer-events-none" />
             </div>
 
             {/* Geometric Accent Line */}

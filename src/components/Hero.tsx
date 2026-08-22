@@ -1,6 +1,7 @@
 import React from 'react';
 import { TRANSLATIONS, Language } from '../data/translations';
 import { IMAGES, getWhatsAppLink } from '../data/content';
+import { OptimizedImage } from './OptimizedImage';
 import { Star, ChevronDown, Sparkles } from 'lucide-react';
 
 interface HeroProps {
@@ -15,11 +16,11 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenBookingModal }) => {
     <section className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center bg-[#211D1A] overflow-hidden pt-24 pb-16">
       {/* Background Image with Dark Contrast Gradient Overlay */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
-        <img
-          src={IMAGES.hero}
-          alt="Hasna 1996 Boutique Beauty Salon Interior"
-          className="w-full h-full object-cover object-center scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
-          loading="eager"
+        <OptimizedImage
+          image={IMAGES.hero}
+          priority={true}
+          className="w-full h-full"
+          imgClassName="scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
         />
         {/* Layered Multi-Stop Dark Vignette Overlay for Crisp Contrast */}
         <div className="absolute inset-0 bg-[#211D1A]/75 backdrop-contrast-125" />
